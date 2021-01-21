@@ -1,24 +1,59 @@
-# README
+## usersテーブル
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+| Column         | Type    | Options                   |
+| -------------- | ------- | ------------------------- |
+| lastname       | string  | null: false               |
+| firstname      | string  | null: false               |
+| lastname_kana  | string  | null: false               |
+| firstname_kana | string  | null: false               |
+| nickname       | string  | null: false               |
+| birth_year     | integer | null: false               |
+| birth_month    | integer | null: false               |
+| birth_day      | integer | null: false               |
+| email          | string  | null: false, unique: true |
+| password       | string  | null: false               |
 
-Things you may want to cover:
+### Association
 
-* Ruby version
+- has_many :items
+- has_many :orders
 
-* System dependencies
+## itemsテーブル
 
-* Configuration
+| Column         | Type       | Options                        |
+| -------------- | ---------- | ------------------------------ |
+| name           | string     | null: false                    |
+| explanation    | string     | null: false                    |
+| category       | string     | null: false                    |
+| condition      | string     | null: false                    |
+| delivery-fee   | string     | null: false                    |
+| area           | string     | null: false                    |
+| necessary-days | integer    | null: false                    |
+| price          | integer    | null: false                    |
+| user_id        | references | null: false, foreign_key: true |
 
-* Database creation
+### Association
 
-* Database initialization
+- belongs_to :user
+- has_one :order
 
-* How to run the test suite
+## ordersテーブル
 
-* Services (job queues, cache servers, search engines, etc.)
+| Column       | Type       | Options                        |
+| ------------ | ---------- | ------------------------------ |
+| card_number  | string     | null: false                    |
+| card_year    | integer    | null: false                    |
+| card_month   | integer    | null: false                    |
+| card_code    | integer    | null: false                    |
+| postal-code  | string     | null: false                    |
+| prefecture   | string     | null: false                    |
+| city         | string     | null: false                    |
+| address-line | string     | null: false                    |
+| phone-number | integer    | null: false                    |
+| user_id      | references | null: false, foreign_key: true |
+| item_id      | references | null: false, foreign_key: true |
 
-* Deployment instructions
+### Association
 
-* ...
+- belongs_to :user
+- belongs_to :item
