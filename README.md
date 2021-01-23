@@ -7,9 +7,7 @@
 | lastname_kana  | string  | null: false               |
 | firstname_kana | string  | null: false               |
 | nickname       | string  | null: false               |
-| birth_year     | integer | null: false               |
-| birth_month    | integer | null: false               |
-| birth_day      | integer | null: false               |
+| birthday       | date    | null: false               |
 | email          | string  | null: false, unique: true |
 | password       | string  | null: false               |
 
