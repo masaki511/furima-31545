@@ -21,7 +21,7 @@
 | Column         | Type       | Options                        |
 | -------------- | ---------- | ------------------------------ |
 | name           | string     | null: false                    |
-| explanation    | string     | null: false                    |
+| explanation    | text       | null: false                    |
 | category       | string     | null: false                    |
 | condition      | string     | null: false                    |
 | delivery-fee   | string     | null: false                    |
