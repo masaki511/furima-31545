@@ -53,7 +53,7 @@
 | Column       | Type       | Options                        |
 | ------------ | ---------- | ------------------------------ |
 | postal-code  | string     | null: false                    |
-| prefecture   | string     | null: false                    |
+| area_id      | integer    | null: false                    |
 | city         | string     | null: false                    |
 | address-line | string     | null: false                    |
 | phone-number | string     | null: false                    |
