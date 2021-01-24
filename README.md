@@ -56,7 +56,7 @@
 | prefecture   | string     | null: false                    |
 | city         | string     | null: false                    |
 | address-line | string     | null: false                    |
-| phone-number | integer    | null: false                    |
+| phone-number | string     | null: false                    |
 | order        | references | null: false, foreign_key: true |
 
 ### Association
