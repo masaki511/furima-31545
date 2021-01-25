@@ -52,7 +52,7 @@
 
 | Column        | Type       | Options                        |
 | ------------- | ---------- | ------------------------------ |
-| postal-code   | string     | null: false                    |
+| postal_code   | string     | null: false                    |
 | area_id       | integer    | null: false                    |
 | city          | string     | null: false                    |
 | address-line  | string     | null: false                    |
