@@ -55,7 +55,7 @@
 | postal_code   | string     | null: false                    |
 | area_id       | integer    | null: false                    |
 | city          | string     | null: false                    |
-| address-line  | string     | null: false                    |
+| address_line  | string     | null: false                    |
 | building_name | string     |                                |
 | phone-number  | string     | null: false                    |
 | order         | references | null: false, foreign_key: true |
