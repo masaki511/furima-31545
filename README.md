@@ -24,9 +24,9 @@
 | explanation      | text       | null: false                    |
 | category_id      | integer    | null: false                    |
 | condition_id     | integer    | null: false                    |
-| delivery-fee_id  | integer    | null: false                    |
+| delivery_fee_id  | integer    | null: false                    |
 | area_id          | integer    | null: false                    |
-| necessary-day_id | integer    | null: false                    |
+| necessary_day_id | integer    | null: false                    |
 | price            | integer    | null: false                    |
 | user             | references | null: false, foreign_key: true |
 
