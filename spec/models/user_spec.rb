@@ -7,38 +7,7 @@ RSpec.describe User, type: :model do
 
   describe 'ユーザー新規登録' do
     context '新規登録できるとき' do
-      it '全ての項目を入力すれば登録できる' do
-        expect(@user).to be_valid
-      end
-      it 'メールアドレスが一意であれば登録できる' do
-        @user.save
-        another_user = FactoryBot.build(:user)
-        another_user.email = @user.email + '_another'
-        expect(another_user).to be_valid
-      end
-      it 'メールアドレスが@を含んでいれば登録できる' do
-        @user.email = 'test@sample'
-        expect(@user).to be_valid
-      end
-      it 'パスワードが6文字以上かつ、半角英数字混合かつ、確認用の値と同一であれば登録できる' do
-        @user.password = 'test00'
-        @user.password_confirmation = @user.password
-        expect(@user).to be_valid
-      end
-      it 'ユーザー本名の名字が全角（漢字・ひらがな・カタカナ）であれば登録できる' do
-        @user.lastname = '名字てすとテスト'
-        expect(@user).to be_valid
-      end
-      it 'ユーザー本名の名前が全角（漢字・ひらがな・カタカナ）であれば登録できる' do
-        @user.firstname = '名前てすとテスト'
-        expect(@user).to be_valid
-      end
-      it 'ユーザー本名の名字のフリガナが全角カタカナであれば登録できる' do
-        @user.lastname_kana = 'ミョウジテスト'
-        expect(@user).to be_valid
-      end
-      it 'ユーザー本名の名前のフリガナが全角カタカナであれば登録できる' do
-        @user.firstname_kana = 'ナマエテスト'
+      it '全ての情報が登録できる' do
         expect(@user).to be_valid
       end
     end
