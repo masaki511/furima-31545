@@ -63,8 +63,13 @@ RSpec.describe Item, type: :model do
         @item.valid?
         expect(@item.errors.full_messages).to include('Price before type cast には半角数字を使用してください')
       end
-      it '価格が¥300~¥9,999,999の範囲で入力されていなければ出品できない' do
-        @item.price = 100
+      it '価格が¥299以下の場合は出品できない' do
+        @item.price = 299
+        @item.valid?
+        expect(@item.errors.full_messages).to include('Price before type cast は¥300〜¥9,999,999の範囲で設定してください')
+      end
+      it '価格が¥10,000,000以上の場合は出品できない' do
+        @item.price = 10000000
         @item.valid?
         expect(@item.errors.full_messages).to include('Price before type cast は¥300〜¥9,999,999の範囲で設定してください')
       end
