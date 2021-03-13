@@ -2,7 +2,10 @@
 <div class="error-alert">
   <ul>
     <% model.errors.full_messages.each do |message| %>
-    <li class='error-message'><%= message %></li>
+      <%if message.include?("before type cast ") %>
+        <% message.slice!("before type cast ") %>
+      <% end %>
+      <li class='error-message'><%= message %></li>
     <% end %>
   </ul>
 </div>
