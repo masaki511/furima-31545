@@ -58,8 +58,18 @@ RSpec.describe Item, type: :model do
         @item.valid?
         expect(@item.errors.full_messages).to include("Price before type cast can't be blank")
       end
-      it '価格が半角数字で入力されていなければ出品できない' do
+      it '価格が半角数字で入力されていなければ出品できない（全角数字）' do
         @item.price = '９９９９'
+        @item.valid?
+        expect(@item.errors.full_messages).to include('Price before type cast には半角数字を使用してください')
+      end
+      it '価格が半角数字で入力されていなければ出品できない（英数字混合）' do
+        @item.price = 'a9999'
+        @item.valid?
+        expect(@item.errors.full_messages).to include('Price before type cast には半角数字を使用してください')
+      end
+      it '価格が半角数字で入力されていなければ出品できない（かな漢字数字混合）' do
+        @item.price = 'あ9999円'
         @item.valid?
         expect(@item.errors.full_messages).to include('Price before type cast には半角数字を使用してください')
       end
