@@ -79,7 +79,7 @@ RSpec.describe Item, type: :model do
         expect(@item.errors.full_messages).to include('Price before type cast は¥300〜¥9,999,999の範囲で設定してください')
       end
       it '価格が¥10,000,000以上の場合は出品できない' do
-        @item.price = 10000000
+        @item.price = 10_000_000
         @item.valid?
         expect(@item.errors.full_messages).to include('Price before type cast は¥300〜¥9,999,999の範囲で設定してください')
       end
