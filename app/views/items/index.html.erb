@@ -126,7 +126,7 @@
     <%= link_to '新規投稿商品', "#", class: "subtitle" %>
     <ul class='item-lists'>
 
-      <% if @items != nil %>
+      <% if @items.length != 0 %>
         <% @items.each do |item| %>
           <li class='list'>
             <%= link_to "#" do %>
@@ -145,7 +145,7 @@
                 <%= item.name %>
               </h3>
               <div class='item-price'>
-                <span><%= item.price %>円<br><%= DeliveryFee.data.detect{|o| o[:id] == item.delivery_fee_id}[:name] %></span>
+                <span><%= item.price %>円<br><%= item.delivery_fee.name %></span>
                 <div class='star-btn'>
                   <%= image_tag "star.png", class:"star-icon" %>
                   <span class='star-count'>0</span>
