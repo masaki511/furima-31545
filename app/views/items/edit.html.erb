@@ -1,1 +1,1 @@
-<%= render partial: "shared/form", locals: { model: @item, submit_text: "変更する" } %>
+<%= render partial: "shared/form", locals: { model: @item, submit_text: "変更する", back_page: item_path(@item.id) } %>
