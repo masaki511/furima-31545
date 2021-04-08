@@ -17,7 +17,6 @@ class OrdersController < ApplicationController
         currency: 'jpy'
       )
       @order_address.save
-      # @items = Item.all.order('created_at DESC')
       redirect_to root_path
     else
       set_item
